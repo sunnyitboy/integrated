@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/resource/flat/css")
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/assets/font-awesome/css/font-awesome.min.css")" />
+
+</head>
+<body>
+    <section id="container">
+        <!--header start-->
+        @*@{ Html.RenderPartial("_TopPartial");}*@
+        @Html.Partial("_TopPartial")
+        <!--header end-->
+        <!--sidebar start-->
+        @*@{ Html.RenderPartial("_LeftPartial");}*@
+        @Html.Partial("_LeftPartial")
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            @RenderBody()
+        </section>
+        <!--main content end-->
+        <!--footer start-->
+        @*@{ Html.RenderPartial("_FooterPartial");}*@
+        @Html.Partial("_FooterPartial")
+        <!--footer end-->
+
+    </section>
+
+    @Scripts.Render("~/resource/flat/js")
+</body>
+</html>
